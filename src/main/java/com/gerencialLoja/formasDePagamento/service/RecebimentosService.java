@@ -34,11 +34,12 @@ public class RecebimentosService {
 
     public RecebimentosModel alterarRecebimento(RecebimentosModel recebimentosModel){
         CalcularValorAReceber calcularValorAReceber = valorAReceberFactory.getCalcularValorAReceber(recebimentosModel.getMetodoPgto());
-        recebimentosModel.setValorAReceberBruto(calcularValorAReceber.calcular(recebimentosModel));
+        recebimentosModel.setValorAReceberLiquido(calcularValorAReceber.calcular(recebimentosModel));
         return recebimentosRepository.save(recebimentosModel);
     }
 
-
-
+    public void deletarRecebimento(Long codigo){
+        recebimentosRepository.deleteById(codigo);
+    }
 
 }

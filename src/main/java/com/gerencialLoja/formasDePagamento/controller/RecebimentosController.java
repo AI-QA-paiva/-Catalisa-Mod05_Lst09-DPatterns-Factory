@@ -36,8 +36,8 @@ public class RecebimentosController {
     }
 
     @DeleteMapping(path = "/recebimento/{codigo}")
-    public void deletarPagamento(@PathVariable Long codigo){
-        //recebimentosService (codigo);
+    public void deletarRecebimento(@PathVariable Long codigo){
+        recebimentosService.deletarRecebimento(codigo);
     }
 
 }
