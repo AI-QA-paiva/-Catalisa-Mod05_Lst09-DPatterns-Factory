@@ -15,10 +15,7 @@ public class PagamentosController {
     private PagamentosService pagamentosService;
 
     @GetMapping (path = "/pagamento")
-    public List<PagamentosModel> buscarValoresPagos(){
-        return pagamentosService.buscarTodosPagamentos();
-
-    }
+    public List<PagamentosModel> buscarValoresPagos(){return pagamentosService.buscarTodosPagamentos();}
 
     @GetMapping (path = "/pagamento/{codigo}")
     public Optional<PagamentosModel> buscarValorPagoPorId(@PathVariable Long codigo){

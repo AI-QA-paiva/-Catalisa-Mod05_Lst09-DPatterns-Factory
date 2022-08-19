@@ -36,13 +36,10 @@ public class PagamentosService {
         CalcularValorPago calcularValorPago = valorAPagarFactory.getCalcularValorPago(pagamentosModel.getStatus());
         pagamentosModel.setValorPago(calcularValorPago.calcular(pagamentosModel));
         return pagamentosRepository.save(pagamentosModel);
-
     }
 
     public void deletarPagamento(Long codigo){
         pagamentosRepository.deleteById(codigo);
     }
-
-
 
 }

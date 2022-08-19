@@ -11,22 +11,19 @@ import java.math.BigDecimal;
 @Getter
 @NoArgsConstructor
 @Setter
-@Table(name = "pagamento")
-public class PagamentosModel {
+@Table(name = "recebimento")
+public class RecebimentosModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
     @Column(length = 50, nullable = false)
-    private String status;
+    private String metodoPgto;
 
     @Column(length = 10, nullable = false)
-    private BigDecimal valorAPagar;
+    private BigDecimal valorAReceberBruto;
 
-    @Column(length = 10, nullable = false)
-    private BigDecimal diferencaValor;
-
-    @Column(length = 10, nullable = false)
-    private BigDecimal valorPago;
+    @Column(length = 50, nullable = false)
+    private BigDecimal valorAReceberLiquido;
 
 }
